@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #D9D9D9;
+        }
+
+        .top-header {
+            background-color: #1C1D5D;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .top-header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .top-header span {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .container {
+            padding: 25px;
+            background-color: #61629A;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            margin-right: 8px;
+            font-size: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .approve { background-color: #28a745; }
+        .reject  { background-color: #b81b1b; }
+        .update  { background-color: #2a9df4; }
+        .delete  { background-color: #8b0000; }
+
+        table {
+            background-color: #424366;
+            width: 80%;
+            margin: 20px auto;
+            border-radius: 10px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 20px;
+            border-bottom: 1px solid white;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="top-header">
+    <img src="/images/aquarians.jpg" alt="The Aquarians Logo">
+    <span>The Aquarians</span>
+
+    <div style="margin-left:auto;">
+        <a href="/articles/submit"
+           style="background:#2a9df4;color:white;padding:8px 14px;
+                  border-radius:8px;text-decoration:none;font-size:13px;">
+            + Submit Article
+        </a>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>Article Dashboard</h2>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date Posted</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr th:each="article : ${articles}">
+            <td th:text="${article.title}">Sample Title</td>
+            <td th:text="${article.status}">pending</td>
+            <td th:text="${article.datePosted}">2025-12-22</td>
+
+            <td>
+
+                <div th:if="${article.status == 'pending'}">
+
+                    <form th:action="@{/dashboard/articles/approve/{id}(id=${article.articleId})}"
+                          method="post" style="display:inline;">
+                        <button class="btn approve">Approve</button>
+                    </form>
+
+                    <form th:action="@{/dashboard/articles/reject/{id}(id=${article.articleId})}"
+                          method="post" style="display:inline;">
+                        <button class="btn reject"
+                                onclick="return confirm('Reject this article?');">
+                            Reject
+                        </button>
+                    </form>
+
+                </div>
+
+                <div th:if="${article.status == 'approved'}">
+
+                    <a th:href="@{/articles/edit/{id}(id=${article.articleId})}"
+                       class="btn update">
+                        Update
+                    </a>
+
+                    <form th:action="@{/articles/delete/{id}(id=${article.articleId})}"
+                          method="post" style="display:inline;">
+                        <button class="btn delete"
+                                onclick="return confirm('Delete this article?');">
+                            Delete
+                        </button>
+                    </form>
+
+                </div>
+
+            </td>
+        </tr>
+
+        <tr th:if="${#lists.isEmpty(articles)}">
+            <td colspan="4" style="text-align:center;">
+                No articles available.
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

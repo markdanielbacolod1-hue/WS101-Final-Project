@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Submit Article - The Aquarians</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #D9D9D9;
+            font-family: sans-serif;
+        }
+        .main-header {
+            background-color: #1C1D5D;
+            display: flex;
+            padding: 15px;
+        }
+        .main-logo {
+            display: flex;
+            color: white;
+            gap: 15px;
+        }
+        .main-logo img {
+            width: 35px;
+            height: 35px;
+            border-radius: 100px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #61629A;
+            padding: 40px;
+        }
+        .form-wrapper {
+            width: 50%;
+            padding: 20px 50px;
+            color: white;
+        }
+        .form-wrapper h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], select, input[type="file"], textarea {
+            width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+        }
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+        button {
+            width: 200px;
+            padding: 12px;
+            background-color: #1C1D5D;
+            border: none;
+            color: white;
+            display: block;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .side-logo {
+            width: 50%;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .side-logo img {
+            width: 300px;
+            border-radius: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="main-logo">
+        <img src="/images/aquarians.jpg" alt="logo">
+        <p>THE AQUARIANS</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="form-wrapper">
+        <h2>Submit Article</h2>
+        <form action="/articles/submit" method="post">
+
+            <label>Title</label>
+            <input type="text" name="title" required>
+
+            <label>Category</label>
+            <select name="categoryId" required>
+                <option value="1">News</option>
+                <option value="2">Feature</option>
+                <option value="3">Science</option>
+                <option value="4">Sports</option>
+                <option value="5">Literary</option>
+            </select>
+
+            <label>Language</label>
+            <select name="language" required>
+                <option value="English">English</option>
+                <option value="Filipino">Filipino</option>
+            </select>
+
+            <label>Content</label>
+            <textarea name="content" required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+    <div class="side-logo">
+        <img src="/images/aquarians.jpg" alt="Publication Logo">
+    </div>
+
+</div>
+
+</body>
+</html>
