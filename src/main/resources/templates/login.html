@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in as | The Aquarians</title>
+
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+<section class="signin-container">
+    <header class="signin-header">
+        <img src="/images/aquarians.jpg" alt="">
+        <p>The Aquarians</p>
+    </header>
+
+    <main class="signin-main">
+        <div class="signin-input">
+            <form action="/login" method="post">
+                <h1>Sign in</h1>
+
+                <label for="email">Email</label>
+                <input type="email"
+                       name="email"
+                       id="email"
+                       placeholder="Markdanielbacolod@gmail.com"
+                       required>
+
+                <label for="password">Password</label>
+                <input type="password"
+                       name="password"
+                       id="password"
+                       placeholder="*****"
+                       required>
+
+                <button type="submit" id="signin">Sign in</button>
+            </form>
+            <p th:if="${error}" th:text="${error}" style="color:red; text-align:center;"></p>
+
+        </div>
+
+        <div class="logo">
+            <img src="/images/aquarians.jpg" alt="">
+        </div>
+    </main>
+</section>
+</body>
+</html>

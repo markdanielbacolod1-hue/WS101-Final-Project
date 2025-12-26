@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in as | The Aquarians</title>
+
+    <!-- ✅ FIXED PATH -->
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+<section class="signin-container">
+    <header class="signin-header">
+        <!-- ✅ FIXED PATH -->
+        <img src="/images/aquarians.jpg" alt="">
+        <p>The Aquarians</p>
+    </header>
+
+    <main class="signin-main">
+        <div class="signin-input">
+            <form action="/signup" method="post">
+                <h1>Sign in</h1>
+
+                <label for="email">Email</label>
+                <input type="email"
+                       name="email"
+                       id="email"
+                       placeholder="Markdanielbacolod@gmail.com"
+                       required>
+
+                <label for="password">Create Password</label>
+                <input type="password"
+                       name="password"
+                       id="password"
+                       placeholder="*****"
+                       required>
+
+                <label for="role">Role</label>
+                <input type="text"
+                       name="role"
+                       id="role"
+                       placeholder="Editors-in-chief"
+                       list="roles"
+                       required>
+
+                <datalist id="roles">
+                    <option value="Editor-in-chief"></option>
+                    <option value="Associate Editor"></option>
+                    <option value="Managing Editor"></option>
+                    <option value="News Editor"></option>
+                    <option value="Feature Editor"></option>
+                    <option value="Science Editor"></option>
+                    <option value="Sports Editor"></option>
+                    <option value="Literary Editor"></option>
+                    <option value="Head Cartoonist"></option>
+                    <option value="Head Layout Artist"></option>
+                    <option value="Head Photojournalist"></option>
+                </datalist>
+
+                <label for="language_section">Language</label>
+                <input list="language"
+                       name="language_section"
+                       id="language_section"
+                       required>
+
+                <datalist id="language">
+                    <option value="English"></option>
+                    <option value="Filipino"></option>
+                </datalist>
+
+                <button type="submit" id="signin">Sign in</button>
+            </form>
+            <p th:if="${error}" th:text="${error}" style="color:red; text-align:center;"></p>
+
+        </div>
+
+        <div class="logo">
+            <img src="/images/aquarians.jpg" alt="">
+        </div>
+    </main>
+</section>
+</body>
+</html>
