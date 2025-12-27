@@ -1,5 +1,6 @@
 //Restrict dashboard access based on user role - mark
 //Implement editor dashboard for article moderation - Catherine Casinas
+//Add approve and reject actions for articles - Catherine Casinas
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.ArticleRepository;
