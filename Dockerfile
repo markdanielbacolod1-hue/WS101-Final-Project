@@ -4,15 +4,18 @@ FROM eclipse-temurin:17-jdk
 # Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper and pom.xml
+# Copy Maven wrapper and project files
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 
+# FIX: give execute permission to mvnw
+RUN chmod +x mvnw
+
 # Download dependencies first (faster builds)
 RUN ./mvnw dependency:go-offline
 
-# Copy the rest of the project
+# Copy source code
 COPY src src
 
 # Build the application
