@@ -1,3 +1,4 @@
+//Allow visitors to post comments with nickname - Althea Mae S. Estores
 package com.example.websystems.entity;
 
 import jakarta.persistence.*;
