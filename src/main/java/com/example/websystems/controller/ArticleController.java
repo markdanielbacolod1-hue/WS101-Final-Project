@@ -1,3 +1,5 @@
+//Create article detail page for visitors - Althea Mae S. Estores
+//Restrict article viewing to approved status only - Althea Mae S. Estores
 package com.example.websystems.controller;
 
 import com.example.websystems.entity.Article;

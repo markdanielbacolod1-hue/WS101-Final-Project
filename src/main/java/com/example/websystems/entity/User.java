@@ -1,3 +1,4 @@
+//Create User entity and repository - Jade Francine Atencio
 package com.example.websystems.entity;
 
 import jakarta.persistence.*;

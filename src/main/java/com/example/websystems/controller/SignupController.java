@@ -1,3 +1,4 @@
+// Handle new user registration request - mark
 package com.example.websystems.controller;
 
 import com.example.websystems.entity.EditorialBoard;

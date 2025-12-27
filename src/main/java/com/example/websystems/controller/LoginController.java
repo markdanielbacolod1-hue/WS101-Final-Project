@@ -1,3 +1,4 @@
+// Store user role and ID in session after login - mark
 package com.example.websystems.controller;
 
 import com.example.websystems.entity.User;
@@ -50,6 +51,7 @@ public class LoginController {
         session.setAttribute("role", user.getRole());
         session.setAttribute("email", user.getEmail());
 
+        // Add role-based redirect logic after login
         if ("Editor-in-chief".equals(user.getRole())) {
             return "redirect:/dashboard";
         }
