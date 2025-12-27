@@ -1,3 +1,4 @@
+//Configure JPA repositories for core entities - Jade Francine Atencio
 package com.example.websystems.repository;
 import java.util.List;
 import com.example.websystems.entity.Article;
