@@ -1,5 +1,10 @@
 //Restrict dashboard access based on user role - mark
+<<<<<<< HEAD
 //Display approved articles in public feed - Althea Mae S. Estores
+=======
+//Implement editor dashboard for article moderation - Catherine Casinas
+//Add approve and reject actions for articles - Catherine Casinas
+>>>>>>> 40b1d39dd740261afbc7a25f069fef2077cc9fc8
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.ArticleRepository;

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 //Create article detail page for visitors - Althea Mae S. Estores
+=======
+//Article Workflow & Dashboard  - Catherine G. Casinas
+//Create article submission page and controller- Catherine Casinas
+//Save submitted articles with pending status- Catherine Casinas
+
+>>>>>>> 40b1d39dd740261afbc7a25f069fef2077cc9fc8
 package com.example.websystems.controller;
 
 import com.example.websystems.entity.Article;
