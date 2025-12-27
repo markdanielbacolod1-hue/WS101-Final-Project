@@ -1,4 +1,5 @@
 //Integrate editorial board from user data - Ma. Rinafe Lozano
+//Add editorial board page and controller - Ma. Rinafe Lozano
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.EditorialBoardRepository;
