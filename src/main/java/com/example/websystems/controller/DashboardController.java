@@ -1,4 +1,5 @@
 //Restrict dashboard access based on user role - mark
+//Display approved articles in public feed - Althea Mae S. Estores
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.ArticleRepository;
