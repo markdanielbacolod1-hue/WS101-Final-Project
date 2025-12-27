@@ -1,4 +1,6 @@
 //Restrict dashboard access based on user role - mark
+//Save submitted articles with pending status - Catherine Casinas
+//Update dashboard actions for approved articles - Catherine Casinas
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.ArticleRepository;

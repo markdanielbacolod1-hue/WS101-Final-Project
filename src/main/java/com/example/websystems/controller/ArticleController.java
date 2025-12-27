@@ -1,4 +1,7 @@
-//Article Workflow - Catherine G. Casinas
+//Article Workflow & Dashboard  - Catherine G. Casinas
+//Create article submission page and controller- Catherine Casinas
+//Save submitted articles with pending status- Catherine Casinas
+//Add approve and reject actions for articles - Catherine Casinas
 package com.example.websystems.controller;
 
 import com.example.websystems.entity.Article;
