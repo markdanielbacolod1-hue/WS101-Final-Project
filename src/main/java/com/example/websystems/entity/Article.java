@@ -1,3 +1,4 @@
+//Add Article entity with approval status - Jade Francine Atencio
 package com.example.websystems.entity;
 
 import jakarta.persistence.*;
