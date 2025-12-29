@@ -16,15 +16,9 @@ public class EditorialBoardController {
     }
 
     @GetMapping("/editorial-board")
-    public String editorialBoard(Model model, HttpSession session) {
-
-        // OPTIONAL: protect page (remove if not needed)
-        if (session.getAttribute("userId") == null) {
-            return "redirect:/login";
-        }
-
-        model.addAttribute("boards", editorialBoardRepository.findAll());
-
-        return "Editorial-board"; // 🔴 MUST MATCH HTML FILE NAME
+    public String editorialBoard(Model model) {
+        model.addAttribute("members", editorialBoardRepository.findAll());
+        return "Editorial-board";
     }
 }
+
