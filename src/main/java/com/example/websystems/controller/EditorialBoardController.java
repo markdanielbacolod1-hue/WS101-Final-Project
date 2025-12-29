@@ -1,8 +1,7 @@
-//Integrate editorial board from user data - Ma. Rinafe Lozano
-//Add editorial board page and controller - Ma. Rinafe Lozano
 package com.example.websystems.controller;
 
 import com.example.websystems.repository.EditorialBoardRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +16,15 @@ public class EditorialBoardController {
     }
 
     @GetMapping("/editorial-board")
-    public String editorialBoard(Model model) {
+    public String editorialBoard(Model model, HttpSession session) {
 
-        model.addAttribute(
-                "members",
-                editorialBoardRepository.findAll()
-        );
+        // OPTIONAL: protect page (remove if not needed)
+        if (session.getAttribute("userId") == null) {
+            return "redirect:/login";
+        }
 
-        return "editorial-board";
+        model.addAttribute("boards", editorialBoardRepository.findAll());
+
+        return "Editorial-board"; // 🔴 MUST MATCH HTML FILE NAME
     }
 }

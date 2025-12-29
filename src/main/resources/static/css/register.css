@@ -1,119 +1,121 @@
-//Finalize layout and assets for production deployment - Ma. Rinafe Lozano
-body {
-    padding-top: 90px;
-    margin: 0;
-    background-color: #D9D9D9;
+/* Finalize layout and assets for production deployment - Ma. Rinafe Lozano */
+
+* {
+    box-sizing: border-box;
 }
 
-.signin-container {
+body {
+    margin: 0;
+    background-color: #D9D9D9;
     font-family: sans-serif;
+}
+
+.signin-header {
+    background-color: #1C1D5D;
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .signin-header img {
     width: 40px;
     height: 40px;
-    object-fit: cover;
-    align-self: center;
     border-radius: 100px;
+    object-fit: cover;
 }
 
-.signin-header {
-    background-color: #1C1D5D;
-    padding: 20px;
-    display: flex;
-    gap: 15px;
-    position: fixed;
-    top: 0;
-    color: white;
-    width: 100%;
-    font-family: sans-serif;
-}
-
+/* MAIN CONTAINER */
 .signin-main {
+    min-height: 100vh;
     background-color: #61629A;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 120px 80px 60px; /* space for header */
 }
+
+/* FORM SECTION */
+.signin-input {
+    color: white;
+    max-width: 400px;
+}
+
+.signin-input h1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
 form {
     display: flex;
     flex-direction: column;
 }
-.signin-input {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 6rem;
-    color: white;
-}
 
-.signin-input h1 {
-    color: white;
-    text-align: center;
-}
-
-.logo {
-    width: 50%;
-    padding: 5rem 0;
-}
-
-.logo img {
-    border-radius: 300px;
-    width: 300px;
+label {
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
 input[type="email"],
 input[type="password"],
-input[type="text"], #listt {
-    width: 200px;
-    padding: 15px;
-    margin: 10px 0 25px;
+input[type="text"],
+input[list] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
     border-radius: 10px;
     border: none;
+    font-size: 14px;
 }
 
 input:focus {
     outline: none;
 }
 
+/* BUTTON */
 #signin {
-    width: 150px;
-    margin: 0 auto;
     background-color: #1C1D5D;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     border: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-@media (max-width: 575.98px) {
-    body {
-        font-size: 12px;
-        padding-top: 3.5rem;
-    }
+/* LOGO SECTION */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
 
-    .signin-header {
-        padding: 10px;
-    }
+.logo img {
+    width: 280px;
+    border-radius: 50%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
 
     .signin-main {
-        display: block;
+        flex-direction: column-reverse;
+        padding: 120px 30px 40px;
+        text-align: center;
     }
 
-    input[type="email"],
-    input[type="password"] {
-        width: 90%;
-    }
     .signin-input {
-        padding: 13.5rem 6rem;
+        max-width: 100%;
     }
+
     .logo img {
-        width: 150px;
-        margin: 0 auto;
-    }
-    .logo {
-        position: absolute;
-        display: flex;
-        top: 3%;
-        left: 50%;
-        transform: translate(-50%);
+        width: 180px;
+        margin-bottom: 30px;
     }
 }
